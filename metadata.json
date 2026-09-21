@@ -1,0 +1,8 @@
+{
+  "name": "다독다독 포트폴리오",
+  "description": "다독다독동아리를 위한 개인 독후감 포트폴리오 누적 기록, 외부 행사/체험 활동기록, 공통도서 토론장, 출판용 문집 PDF/이미지 내보내기 및 교사용 활동 수합 관리 시스템",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
