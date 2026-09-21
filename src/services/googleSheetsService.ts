@@ -319,8 +319,14 @@ export async function fetchSubmissionsFromGoogleSheets(): Promise<{
       const reports: BookReport[] = Array.isArray(data.reports) ? data.reports : [];
       const activities: ActivityRecord[] = Array.isArray(data.activities) ? data.activities : [];
 
-      // Extract real students from data collection sheet (both from data.students and from submitted reports)
+      // Base roster: start with stored 23 students
+      const baseRoster = getStoredStudentRoster();
       const studentMap = new Map<string, StudentRosterItem>();
+      baseRoster.forEach((stu) => {
+        if (stu && stu.studentId) {
+          studentMap.set(String(stu.studentId).trim(), stu);
+        }
+      });
 
       // A. From data.students (if sheet Apps Script explicitly returned student roster)
       if (Array.isArray(data.students)) {
@@ -338,7 +344,7 @@ export async function fetchSubmissionsFromGoogleSheets(): Promise<{
         });
       }
 
-      // B. From data.reports (every submission in the data collection sheet has studentId & studentName)
+      // B. From data.reports (any new submitted reports also merged)
       reports.forEach((rep) => {
         const rName = String(rep.studentName || "").trim();
         const rId = String(rep.studentId || "").trim();
@@ -351,17 +357,8 @@ export async function fetchSubmissionsFromGoogleSheets(): Promise<{
         }
       });
 
-      const extractedFromSheet = Array.from(studentMap.values());
-      let finalRoster: StudentRosterItem[] = [];
-
-      if (extractedFromSheet.length > 0) {
-        // Real students from Google Sheet are the official source of truth
-        finalRoster = extractedFromSheet;
-        saveStudentRoster(finalRoster);
-      } else {
-        // Retain current stored roster (with any dummy names purged)
-        finalRoster = getStoredStudentRoster();
-      }
+      const finalRoster = Array.from(studentMap.values());
+      saveStudentRoster(finalRoster);
 
       return {
         success: true,
