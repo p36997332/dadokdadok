@@ -77,9 +77,9 @@ export const StudentLoginView: React.FC<StudentLoginViewProps> = ({
   };
 
   const handleUseDemoStudent = () => {
-    setStudentId("20104");
-    setStudentName("김민서");
-    setPassword("0104");
+    setStudentId("10712");
+    setStudentName("심채원");
+    setPassword("1712");
     setErrorMessage(null);
   };
 
@@ -230,7 +230,7 @@ export const StudentLoginView: React.FC<StudentLoginViewProps> = ({
         <div className="mt-5 p-3 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-between text-xs">
           <div className="text-slate-600">
             <span className="font-bold text-slate-800">예시 계정 테스트:</span>{" "}
-            <span className="text-slate-500 font-mono">20104 김민서 / 0104</span>
+            <span className="text-slate-500 font-mono">10712 심채원 / 1712</span>
           </div>
           <button
             type="button"
@@ -245,7 +245,7 @@ export const StudentLoginView: React.FC<StudentLoginViewProps> = ({
         <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span>동아리 명단 연동 ({rosterCount || 24}명)</span>
+            <span>동아리 명단 연동 ({rosterCount || 23}명)</span>
           </div>
           <button
             type="button"

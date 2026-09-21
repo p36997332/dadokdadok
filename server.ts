@@ -16,7 +16,7 @@ app.use(express.json({ limit: "15mb" }));
 const ROSTER_FILE = path.join(process.cwd(), "src", "data", "student_roster.json");
 
 const BANNED_NAMES = new Set([
-  "강민준", "김도현", "김동우", "김민서", "김서진", "박서준", "박시우", "박유찬",
+  "강민준", "김도현", "김동우", "김서진", "박서준", "박시우", "박유찬",
   "배주원", "백도윤", "서준우", "이도윤", "신우진", "양승우", "오태윤",
   "유도현", "윤서준", "이서진", "이준호", "장하준", "정예준", "조은우",
   "최지훈"

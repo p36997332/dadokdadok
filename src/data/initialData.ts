@@ -1,0 +1,132 @@
+import { BookReport, DiscussionPost, ClubInfo, ActivityRecord, StudentRosterItem } from "../types";
+
+export const initialClubInfo: ClubInfo = {
+  name: "다독다독동아리",
+  grade: "고등학교 2학년",
+  currentBook: "《정의란 무엇인가》 - 마이클 샌델",
+  currentTopic: "공리주의적 관점과 칸트의 의무론적 정의관 중 현대 사회 공공정책의 기준이 되어야 할 것은?",
+  nextMeeting: "매주 목요일 7교시 도서관 2층 세미나실",
+  targetCount: 5,
+};
+
+export const initialReports: BookReport[] = [
+  {
+    id: 1711000001,
+    logNo: "01",
+    studentId: "20104",
+    studentName: "김민서",
+    bookTitle: "멋진 신세계",
+    author: "올더스 헉슬리 · 이덕형 옮김",
+    publisher: "문예출판사",
+    readingPeriod: "9.3 ~ 9.10",
+    category: "소설 / 인문",
+    pageCount: "384",
+    rating: 5,
+    readStatus: "완독",
+    summary: `인간이 인공수정관에서 대량 생산되고, 카스트 계급(알파~엡실론)에 따라 운명이 결정되는 미래 통제 사회를 다룬다.
+조건 반사 교육과 행복 물질 '소마'를 통해 고통과 불만은 완전히 제거되었지만, 진정한 사랑과 예술, 비판적 사유는 금지되어 있다. 야만인 구역에서 온 존이 문명사회의 쾌락주의에 환멸을 느끼며 파국을 맞이한다.`,
+    quotes: [
+      {
+        quote: "실제적인 행복은 언제나 불행에 대한 보상처럼 보잘것없어 보이지만, 안정은 장관을 이루지 못한다.",
+        page: "p.312",
+      },
+      {
+        quote: "나는 안락함을 원치 않습니다. 나는 신을 원하고, 시를 원하고, 참된 위험을 원하고, 자유를 원합니다.",
+        page: "p.345",
+      },
+    ],
+    thoughts: `과학 기술의 극단적 발전이 인간의 고통을 없애주는 대신 자유 의지와 고유한 개성을 박탈하는 디스토피아를 보며 깊은 충격을 받았습니다.
+안정과 쾌락만을 위해 조건 반사 교육과 계급 분화, 소마(마약)를 강요받는 사람들의 모습은 진정한 행복이 무엇인지 되묻게 합니다.
+고통 없는 삶이 과연 인간다운 삶인지, 그리고 기술 발전의 속도에 윤리적 성찰이 얼마나 절실한지 깨달았습니다.`,
+    nextBook: "《1984》 - 조지 오웰",
+    content: `[줄거리 & 핵심 내용]
+인간이 인공수정관에서 대량 생산되고 소마를 통해 쾌락을 유지하는 디스토피아를 다룬다.
+[인상 깊은 문장]
+"나는 안락함을 원치 않습니다. 나는 신을 원하고 자유를 원합니다." (p.345)
+[나의 생각 · 느낀 점]
+과학 기술의 극단적 발전이 인간의 고통을 없애주는 대신 자유 의지를 박탈하는 모습을 보며 윤리적 성찰의 필요성을 느꼈습니다.`,
+    aiSummary: "기술 만능주의와 통제 사회 속에서 진정한 자유의지와 고유성의 가치를 성찰하고, 과학 기술의 발전 방향성에 윤리적 고민이 병행되어야 함을 설득력 있게 제시함.",
+    keywords: ["디스토피아", "인간의존엄성", "과학윤리", "자유의지"],
+    thoughtQuestion: "쾌락과 안정이 보장되는 통제된 사회와, 고통이 따르지만 자유가 있는 사회 중 무엇을 선택해야 할까요?",
+    subjectLink: "윤리와 사상 (공리주의 비판), 사회문화 (과학기술과 인간화)",
+    date: "2026. 09. 16.",
+    createdAt: "2026. 09. 16. 20:30",
+    likes: 4,
+    image: null,
+  },
+];
+
+export const initialDiscussions: DiscussionPost[] = [
+  {
+    id: 1712000001,
+    studentId: "20104",
+    studentName: "김민서",
+    content: `[3월 4주차 발제] 《정의란 무엇인가》 2장 공리주의 파트를 읽고 발제합니다.
+샌델 교수가 언급한 난파선 미뇨넷 호 사건(살아남기 위해 소년 선원을 희생시킨 선원들)에 대해 여러분은 어떻게 생각하시나요?
+다수의 생존을 위한 소수의 불가피한 희생은 정당화될 수 있을까요? 아니면 어떠한 상황에서도 침해받을 수 없는 불가침의 권리가 존재하는 것일까요?`,
+    date: "2026. 03. 26.",
+    createdAt: "2026. 03. 26. 17:20",
+    likes: 8,
+    comments: [
+      {
+        id: "c1",
+        studentName: "이도윤 (20112)",
+        text: "칸트의 관점처럼 인간은 어떠한 경우에도 다른 목적을 위한 단순한 수단으로 취급되어서는 안 된다고 봅니다. 소수의 희생을 허용하는 순간 누구도 안전할 수 없습니다.",
+        date: "2026. 3. 26. 18:30"
+      },
+      {
+        id: "c2",
+        studentName: "박소율 (20205)",
+        text: "원칙적으로는 도윤이 의견에 동의하지만, 극단적인 현실 상황에서 결과적 비극을 최소화하려는 선택 또한 완전히 비난하기는 어렵다고 생각합니다.",
+        date: "2026. 3. 27. 09:15"
+      }
+    ]
+  }
+];
+
+export const initialActivities: ActivityRecord[] = [
+  {
+    id: 1713000001,
+    studentId: "20104",
+    studentName: "김민서",
+    activityTitle: "윤동주 문학관 및 시인의 언덕 현장 문학기행",
+    activityType: "문학기행/견학",
+    activityDate: "2026. 04. 11.",
+    learnedLessons: `버려진 물탱크와 수도가압장을 재생하여 조성한 윤동주 문학관의 건축적 상징성과 시인의 시대적 고뇌를 심층적으로 배웠습니다.
+자필 원고본에 적힌 '서시', '별 헤는 밤', '자화상'의 창작 배경과 일제 강점기 청년 지식인으로서 겪어야 했던 자기 성찰의 고통을 시기별 유물 자료를 통해 구체적으로 학습했습니다.`,
+    reflections: `교과서 활자로만 접하던 윤동주의 시구를 시인의 언덕에 서서 인왕산 바람을 맞으며 낭독해보니 전율이 느껴졌습니다.
+암흑의 시대에도 부끄러움 없는 삶을 갈망했던 한 청년의 순결한 양심을 마주하며, 현대의 무기력과 타협에 젖어있던 제 자신을 겸허히 반성하고 올곧은 가치관을 지닌 학생으로 성장하겠다고 다짐했습니다.`,
+    aiSummary: "윤동주 문학관 현장 탐방을 통해 문학 작품의 시대적 맥락과 작가 의식을 공간적 상징성과 결합하여 심도 있게 이해하고, 청년 지식인의 윤리적 책임의식을 내면화함.",
+    keywords: ["문학기행", "윤동주", "역사인식", "자기성찰"],
+    date: "2026. 04. 12.",
+    createdAt: "2026. 04. 12. 16:30",
+    likes: 7,
+    image: null,
+  }
+];
+
+export const initialStudents: StudentRosterItem[] = [
+  { studentId: "10712", studentName: "심채원", password: "1712" },
+  { studentId: "20202", studentName: "고완영", password: "0222" },
+  { studentId: "20205", studentName: "김가현", password: "0225" },
+  { studentId: "20206", studentName: "김규림", password: "0226" },
+  { studentId: "20210", studentName: "박창언", password: "2210" },
+  { studentId: "20221", studentName: "허가연", password: "2221" },
+  { studentId: "20309", studentName: "박채은", password: "0239" },
+  { studentId: "20406", studentName: "박은채", password: "0246" },
+  { studentId: "20410", studentName: "양아원", password: "2410" },
+  { studentId: "20506", studentName: "김혜원", password: "0256" },
+  { studentId: "20521", studentName: "하정윤", password: "2521" },
+  { studentId: "20603", studentName: "김민서", password: "0263" },
+  { studentId: "20704", studentName: "김환유", password: "0274" },
+  { studentId: "20706", studentName: "박소린", password: "0276" },
+  { studentId: "20806", studentName: "선다인", password: "0286" },
+  { studentId: "20807", studentName: "선애림", password: "0287" },
+  { studentId: "20812", studentName: "오채윤", password: "2812" },
+  { studentId: "20813", studentName: "유진솔", password: "2813" },
+  { studentId: "20818", studentName: "장서현", password: "2818" },
+  { studentId: "20821", studentName: "함도이", password: "2821" },
+  { studentId: "21001", studentName: "강나경", password: "2101" },
+  { studentId: "21007", studentName: "김서영", password: "2107" },
+  { studentId: "21021", studentName: "한성은", password: "1021" },
+];
