@@ -37,12 +37,12 @@ export default function App() {
   });
   const [isRefreshingRoster, setIsRefreshingRoster] = useState(false);
 
-  // Admin Authentication State (Default password: "1234")
+  // Admin Authentication State (Default password: "0213")
   const [adminPassword, setAdminPassword] = useState<string>(() => {
     try {
-      return localStorage.getItem("adminPassword") || "1234";
+      return localStorage.getItem("adminPassword") || "0213";
     } catch {
-      return "1234";
+      return "0213";
     }
   });
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState<boolean>(false);
